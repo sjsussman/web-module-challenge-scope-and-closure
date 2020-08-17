@@ -27,11 +27,13 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ * - Counter 1 uses a higher order function and callback function to return the count where counter 2 is a simple function that returns an increased count.
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ * -Counter 1 uses closure because the inner function is using the count variable that was defined outside of its scope.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * - Counter 1 would be preferable if you wanted to apply the counter to different funtions simultaneously. Counter 2 would be better if you were just trying to keep count of one thing.
 */
 
 // counter1 code
@@ -44,6 +46,11 @@ function counterMaker() {
 
 const counter1 = counterMaker();
 
+console.log(counter1());
+console.log(counter1());
+console.log(counter1());
+console.log(counter1());
+
 // counter2 code
 let count = 0;
 
@@ -51,16 +58,22 @@ function counter2() {
   return count++;
 }
 
+console.log(counter2(count));
+console.log(counter2(count));
+console.log(counter2(count));
+console.log(counter2(count));
 
 /* Task 2: inning() 
 
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(){
 
-    /*Code Here*/
+    let points = Math.floor(Math.random() * 3);
+    return points;
 
 }
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -76,11 +89,25 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
 
-  /*Code Here*/
-
+function finalScore(inning, num){
+  let obj = {
+    Home: inning()*num,
+    Away: inning()*num,
+  }
+ return obj;
 }
+
+console.log(finalScore(inning, 4));
+
+// return `{
+//   Home: ${inning() * num}, 
+//   Away: ${inning() * num} 
+// }`
+
+
+
+
 
 /* Task 4: 
 
@@ -103,8 +130,32 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScore, inning, num) {
+  for(let i = 0; i<num i++){
+
+  }
+}
+
+let getInningScore = function(){
+  return `${num} inning: ${obj.Away} - ${obj.Home}`
 }
 
 
+
+console.log(scoreboard())
+
+// function personalDice(name){
+//   return function(){
+//       // generate random number between 1 and 6
+//     const newRoll = Math.floor(Math.random() * 6);
+//     console.log(`${name} rolled a ${newRoll}`)
+//   }
+// }
+
+// const dansRoll = personalDice("Dan");
+
+// const zoesRoll = personalDice("Zoe");
+
+
+// dansRoll();
+// dansRoll();
