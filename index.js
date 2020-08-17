@@ -70,6 +70,7 @@ Write a function called `inning` that returns a random number of points that a t
 function inning(){
 
     let points = Math.floor(Math.random() * 3);
+
     return points;
 
 }
@@ -91,22 +92,20 @@ finalScore(inning, 9) might return:
 
 
 function finalScore(inning, num){
-  let obj = {
-    Home: inning()*num,
-    Away: inning()*num,
+
+let score = {
+  Home: 0,
+  Away: 0,
   }
- return obj;
+
+  for (let i = 0; i < num; i++){
+    score.Home += inning();
+    score.Away += inning();
+  }
+return score;
 }
 
-console.log(finalScore(inning, 4));
-
-// return `{
-//   Home: ${inning() * num}, 
-//   Away: ${inning() * num} 
-// }`
-
-
-
+console.log(finalScore(inning, 9));
 
 
 /* Task 4: 
@@ -131,18 +130,11 @@ Final Score: awayTeam - homeTeam */
 
 
 function scoreboard(getInningScore, inning, num) {
-  for(let i = 0; i<num i++){
 
-  }
+
 }
 
-let getInningScore = function(){
-  return `${num} inning: ${obj.Away} - ${obj.Home}`
-}
-
-
-
-console.log(scoreboard())
+console.log(scoreboard(inning(), inning, 9));
 
 // function personalDice(name){
 //   return function(){
