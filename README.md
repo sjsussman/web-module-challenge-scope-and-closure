@@ -42,6 +42,8 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+- Closure is used to reference the scope of a given item. Variables created within a function are specific to that functions and cannot be referenced in the larger picture.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +65,13 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+-Closure is used when the console.log statement pulls the name argument from outside of the function in which it was called.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+-They are two seperate rolls giving two seperate values. Always between 1 and 6.
+
 c. What is the lexical scope of `newRoll`? 
+-The lexical scope of 'newRoll' is the return function that is being called.
 
 ### Task 2c - Exit Ticket
 
